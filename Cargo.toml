@@ -1,0 +1,15 @@
+[package]
+name = "microsoft"
+version = "0.1.0"
+authors = ["fret "]
+edition = "2021"
+description = "A simple Rust project"
+license = "MIT"
+
+[[bin]]
+name = "main"
+path = "main.rs"
+
+[dependencies]
+rand = "0.8"
+urlencoding = "2.1"
