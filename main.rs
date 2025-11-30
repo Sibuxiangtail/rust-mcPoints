@@ -464,6 +464,8 @@ fn main() {
         "digitizing your business",
         "logistics coordination tips",
         "factory operation stages",
+        "how to buy a business",
+        "outer wilds best moments",
     ];
 
     let mut rng = thread_rng();
@@ -484,4 +486,5 @@ fn main() {
                 .status();
         thread::sleep(Duration::from_secs(10));
     }
+
 }
