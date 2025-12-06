@@ -470,21 +470,22 @@ fn main() {
 
     let mut rng = thread_rng();
     let selected: Vec<_> = search_terms
-        .choose_multiple(&mut rng, 30)
+        .choose_multiple(&mut rng, 30) //pick 30 random items
         .cloned()
         .collect();
 
         for term in selected {
-            let query = encode(&term);
+            let query = encode(&term); //encode term so it can be used safely in url
             let raw_url = format!("https://www.bing.com/search?q={}&form=TSASDS", query);
     
             // Escape & for Windows CMD shell
             let cmd_url = escape_cmd_ampersand(&raw_url);
     
             let _ = Command::new("cmd")
-                .args(&["/C", "start", "msedge", &cmd_url])
+                .args(&["/C", "start", "msedge", &cmd_url]) // launch ms edge 
                 .status();
         thread::sleep(Duration::from_secs(10));
     }
 
 }
+
